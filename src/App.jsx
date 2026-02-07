@@ -1,16 +1,18 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Bio from './components/Bio';
-import Experience from './components/Experience';
+import WhatIDo from './components/WhatIDo';
 import Contact from './components/Contact';
+import GreenBackground from './components/GreenBackground';
 
 function App() {
   return (
-    <div>
+    <div className="bg-primary text-white min-h-screen relative">
+      <GreenBackground />
       <Navbar />
       <Hero />
       <Bio />
-      <Experience />
+      <WhatIDo />
       <Contact />
     </div>
   );

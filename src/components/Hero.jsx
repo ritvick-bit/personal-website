@@ -1,77 +1,75 @@
-import InteractivePhoto from './InteractivePhoto';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <section id="home" className="section container" style={{
+        <section id="home" style={{
+            position: 'relative',
+            height: '100vh',
             display: 'flex',
-            flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '4rem',
-            paddingTop: '8rem', // Clearance for navbar
+            justifyContent: 'center',
+            overflow: 'hidden',
+            backgroundColor: '#0a0f14'
         }}>
-            <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                style={{ flex: 1 }}
-            >
-                <h1 style={{
-                    fontSize: '4rem',
-                    fontWeight: 800,
-                    background: 'linear-gradient(to right, var(--primary-green), var(--accent-green))',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    marginBottom: '1rem',
-                }}>
-                    Ritvick Palanikumar
-                </h1>
-                <h2 style={{
-                    fontSize: '1.5rem',
-                    color: 'var(--text-muted)',
-                    marginBottom: '2rem',
-                }}>
-                    Environmental Engineering Student & Innovator
-                </h2>
-                <p style={{
-                    fontSize: '1.1rem',
-                    maxWidth: '600px',
-                    marginBottom: '2rem',
-                    color: 'var(--text-main)'
-                }}>
-                    Building sustainable solutions through engineering, data science, and green entrepreneurship.
-                </p>
-                <div style={{ display: 'flex', gap: '1rem' }}>
-                    <a href="#contact" style={{
-                        padding: '0.8rem 2rem',
-                        background: 'var(--primary-green)',
-                        color: '#000',
-                        borderRadius: '2rem',
-                        fontWeight: 'bold',
-                        border: 'none',
-                    }}>
-                        Get in Touch
-                    </a>
-                    <a href="#experience" style={{
-                        padding: '0.8rem 2rem',
-                        border: '1px solid var(--primary-green)',
-                        borderRadius: '2rem',
-                        fontWeight: 'bold',
-                    }}>
-                        View Work
-                    </a>
-                </div>
-            </motion.div>
+            {/* Background Gradient */}
+            <div style={{
+                position: 'absolute',
+                inset: 0,
+                zIndex: 0,
+                background: 'linear-gradient(to bottom, #020617, #1e1b4b, #020617)',
+                opacity: 0.8
+            }} />
 
-            <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                style={{ flex: 1, display: 'flex', justifyContent: 'center' }}
-            >
-                <InteractivePhoto />
-            </motion.div>
+            {/* Content */}
+            <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', color: 'white', padding: '0 1rem' }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                >
+                    {/* Top Line */}
+                    <div style={{ width: '100%', maxWidth: '600px', height: '1px', background: 'white', margin: '0 auto 1.5rem', opacity: 0.7 }}></div>
+
+                    {/* Name */}
+                    <h1 style={{
+                        fontSize: 'clamp(2.5rem, 6vw, 5rem)',
+                        fontWeight: 700,
+                        letterSpacing: '0.15em',
+                        textTransform: 'uppercase',
+                        marginBottom: '1rem',
+                        fontFamily: "'Montserrat', sans-serif"
+                    }}>
+                        Ritvick Palanikumar
+                    </h1>
+
+                    {/* Bottom Line */}
+                    <div style={{ width: '100%', maxWidth: '600px', height: '1px', background: 'white', margin: '1.5rem auto 2rem', opacity: 0.7 }}></div>
+
+                    {/* Subtitle */}
+                    <h2 style={{
+                        fontSize: 'clamp(0.8rem, 2vw, 1.1rem)',
+                        letterSpacing: '0.3em',
+                        fontWeight: 300,
+                        textTransform: 'uppercase',
+                        color: '#e0e0e0'
+                    }}>
+                        Environmental Engineering | Data Scientist | Innovator
+                    </h2>
+                </motion.div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    style={{ position: 'absolute', bottom: '40px', left: '50%', transform: 'translateX(-50%)' }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                >
+                    <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem', display: 'block', color: '#e0e0e0' }}>Learn More</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                    </svg>
+                </motion.div>
+            </div>
         </section>
     );
 };

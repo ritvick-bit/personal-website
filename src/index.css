@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
 :root {
-  --bg-color: #051814;
-  --text-main: #e2e8f0;
-  --text-muted: #94a3b8;
-  --primary-green: #10b981;
-  --secondary-green: #059669;
-  --accent-green: #34d399;
-  --card-bg: #0f2924;
-  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --bg-primary: #0a0f14;
+  /* Darker, more cinematic background */
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --accent-color: #10b981;
+  /* Keep emerald accent for now, or adjust to match image */
+  --font-main: 'Montserrat', sans-serif;
 }
 
 * {
@@ -16,15 +17,28 @@
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
+  margin: 0;
+  /* Added from new body */
   font-family: var(--font-main);
+  background-color: var(--bg-primary);
+  /* Updated variable */
+  color: var(--text-primary);
+  /* Updated variable */
+  -webkit-font-smoothing: antialiased;
+  /* Added from new body */
+  -moz-osx-font-smoothing: grayscale;
+  /* Added from new body */
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-main);
   line-height: 1.2;
 }
